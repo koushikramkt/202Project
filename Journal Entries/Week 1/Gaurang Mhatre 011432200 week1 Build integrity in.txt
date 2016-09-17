@@ -1,0 +1,15 @@
+﻿Day 2016-07-13
+Worked with Principle,
+Free from “flaw”: As a team, we are discussing, Possible ways in which we can test User acceptance. For given topic.
+  As of now the user group is age 10-11. So the Goal is to keep application as simple as possible. And not to complicate the user experience. 
+
+
+Day 2016-07-15
+Free from “defect”:  Brainstorming about test first approach with Team to reduce defects. Researched possible ways to write test cases in java.
+
+Day 2016-07-17
+Free from “decay”: Not worrying about the decay as we are in the initial stage of development. planning to start considering this topic from next week.
+
+
+links,
+http://www.gettingagile.com/2006/10/31/building-integrity-in/
