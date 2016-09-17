@@ -1,0 +1,11 @@
+Journal Entry – Week #1 
+Name: Koushik Ram Kunathur Thikshaja
+Student ID: 010730070
+XP Core Value – Eliminate Waste
+9/11/2016, 9/12/2016
+The first and foremost task for everyone was to come up with a team name and project ideas. We all decided to meet on Monday night. We all discussed what was to be done. Everyone was supposed to choose a XP core value and I decide to go with ‘Eliminate Waste’. We also discussed about various strategies and game ideas. We agreed to meet on Saturday’s, after the class. We also decided to meet one more day depending upon the needs. We formed a mailing group and everyone agreed to update others regarding their tasks. I created a GIT repository and added everyone. Krisitina created the Waffle board and set up the initial, general tasks such as choosing the team name, project name and project ideas. We also decided to try the extra credit, which requires to test our product with 5 people on campus. We added that as a task in Waffle board and assigned it to everyone.
+On the first day of meeting everyone came up with their own ideas for the game. My job was to refine the ideas as the core XP value that I took was eliminate waste. We decided to develop a multi-player game and also discussed the pros and cons of all the individual ideas. We couldn’t agree upon a final topic and we decided to do more research before the next meeting.
+9/13/2016-9/16/2016
+I did research on the project topic and the idea that is currently in my mind is to develop an interactive quiz type Q&A game that could teach children about the basics of various programming languages. The game that I have in mind is a multiplayer game that gets the answer from the user based on a timer, similar to Quiz UP. My idea is to encourage healthy competition among children to promote computer languages. 
+9/17/2016
+As planned, we all met after the class got over. We discussed on the project ideas. My core XP value is Eliminate waste. As the name suggests, I helped the team in filtering the ideas. Everyone wanted one more day to decide on the final topic and hence we are closing the Week’s timesheet with this.
