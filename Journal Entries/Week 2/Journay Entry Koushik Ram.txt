@@ -1,0 +1,18 @@
+Journal Entry – Week #2 
+Name: Koushik Ram Kunathur Thikshaja
+Student ID: 010730070
+XP Core Value – Eliminate Waste
+
+My role in the team is to Eliminate waste in team and follow the best practices. 
+
+09/18/2016, 09/19/2016 and 09/20/2016
+
+We finally decided the project topic. We decided to go with a multi player Quiz game. We wanted this game to be as engaging and interactive as possible. Each one came with a different idea on how to develop the game. People were worried much about the implementation of the project and I wanted to make sure that we concentrated on the ideas for the project and rather not to discuss about the implementation itself. We also decided to eliminate some of the ideas that sound infeasible. Many of the ideas were complex and we had to curb the complexity down to keep it as simple and elegant as possible.  
+
+09/21/2016, 09/22/2016, 09/23/2016
+
+I created a list of tasks in Waffle Io and assigned myself to the tasks that I wanted to work on. I suggested other members to add the taks that they thought were relevant and also assign themselves to the already existing tasks. I also requested the team members to not to assign themselves to taks that were already being worked by 2 or 3 members. This way, we can eliminate waste or repitition of work. Everyone agreed on this. I created wireframes for the game and uploaded it in git. I asked other team members to review my work and approve it so that we all are in same page. 
+
+09/24/2016
+
+We all met after the class to meet and discuss the progress that we made this week. We decided that Gauarang will take care of the CFD sheet going forward. Everyone was covinved with the initial wireframe thst I created and we decided to proceed with it.
