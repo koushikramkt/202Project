@@ -1,0 +1,41 @@
+Binary number questions
+
+1. Why do computers use binary?
+A. Simplifies processing required
+B. Early microprocessors could only process 2 numbers
+C. Electric circuits are made up of a combination of switches that can only be on or off. 
+D. Makes data easier to sort
+
+True/False
+1. To convert an octal number to hexadecimal, just multiply by 2 and add 16. (False)
+2. Since there are only 10 different digits, we can't have any base greater than 10. (False)
+3. A bit is the smallest unit of data on a computer. (true)
+
+1. Numbering system that uses 
+Convert each number in base 10 to the following base:
+1. 16 into base 4
+2. 16 into base 2
+3. 30 in base 4
+4. 49 in base 2
+5. 30 in base 3
+
+Solutions: 
+1. 100
+2. 10000
+3. 132
+4. 110001
+5. 1010
+
+Decimal to hexidecimal:
+1. 13
+2. 32
+3. 59
+4. 45
+5. 17
+
+Solution
+1. D
+2. 20
+3. 3B
+4. 2D
+5. 11
