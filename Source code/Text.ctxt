@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Text
+comment1.params=text
+comment1.target=Text(java.lang.String)
+comment1.text=\r\n\ Create\ some\ text\r\n
+comment2.params=world
+comment2.target=void\ addedToWorld(greenfoot.World)
+comment2.text=\r\n\ When\ the\ text\ is\ added\ to\ the\ world,\ draw\ it\ on\ screen\r\n
+comment3.params=
+comment3.target=void\ draw()
+comment3.text=\r\n\ Draw\ the\ text.\r\n
+numComments=4
