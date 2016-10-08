@@ -1,0 +1,8 @@
+2016/10/03
+After discussing the outline of the code with other teammates we stated to plan the UI and database or the database. As per Kaushik’s recommendation, we planned to work with Database on AWS. Also we started planning for the UI of the quiz. The goal is keep it as simple as possible, at the same time keep the game educational.
+ 
+2016/10/06
+After taking handover of Kristina’s tasks we started working with the UI. Vedant and Rohit are also working on keeping the UI as interactive as possible. The goal is make the kinds learn programming language and other concepts in Computer Science.
+
+2016/10/08
+Today, we took a small meeting to share the progress. And understood what other are working on. Also we have fixed a date for internal release. The primary goal of today’s meeting was to keep everyone on the same page. Also have decided a strategy for the development.
