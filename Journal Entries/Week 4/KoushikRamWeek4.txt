@@ -1,0 +1,8 @@
+Week 4-
+Name-Koushik Ram
+Id- 010730070
+XP Core Value-Eliminate Waste
+
+
+
+My XP value is to Eliminate waste from the team and encourage the same to other team members. Last week we could't meet as everyone was busy with Silicon valley code campaign. We decided to meet on one of the  weekdays to discuss about the progress. As discussed, we met on one of the weekdays to discuss the progress. We priortized the top 2 jobs that we have in hand and split it among ourselves. As Kristina left the team we are short by one person. We decided to sub-divide the team into two and assign tasks accordingly. Everyone agreed with this idea. After discussion we found that the top two tasks were 1. creating a DB in cloud and get the questions from it. 2. Change the UI in green foot as the initial version which I gave was very simple and contained nothing other than text. I took the responsibility to do the DB part and two other team mates were asked to change the UI. We thought 3 people working on UI is waste of time and the third person was given the job of scoring. The base code that I gave didnt have any mechanism to save the user score. We thought that once these three tasks are done we will be done with the SIngle player version of the game and the remaining will be done in the up coming weeks. We were also discussing about including Design patterns into our code so that we needn't change the code entirely in case of any minute changes in the future.
