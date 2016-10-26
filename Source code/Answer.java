@@ -3,22 +3,22 @@ import java.awt.Font;
 import java.awt.Color;
 
 /**
- * An answer - several of these are displayed per question.
+ * Write a description of class Answer here.
  * 
- * @author Michael Berry (mjrb4)
- * @version 07/05/09
+ * @author (your name) 
+ * @version (a version number or a date)
  */
 public class Answer extends Actor
 {
-    private String answerText;
-    private boolean isCorrect;
+   private String text;
+    private boolean correct;
 
     /**
      * Create a new answer.
      */
     public Answer(String text, boolean correct) {
-        this.answerText = text;
-        this.isCorrect = correct;
+        this.text = text;
+        this.correct = correct;
     }
     
     /**
@@ -32,10 +32,11 @@ public class Answer extends Actor
      * Draw the answer to screen.
      */
     private void draw(Color colour) {
-        GreenfootImage image = new GreenfootImage(500, 50);
+        GreenfootImage image = new GreenfootImage(500, 60);
         image.setColor(colour);
-        image.setFont(new Font("SansSerif", Font.BOLD, 14));
-        image.drawString(answerText, 10, 20);
+        image.setFont(new Font("SansSerif", Font.BOLD, 15));
+        image.drawString("*" + text, 100, 60);
+        
         setImage(image);
     }
     
@@ -46,7 +47,7 @@ public class Answer extends Actor
      */
     public void act() {
         if(Greenfoot.mouseClicked(this)) {
-            if(isCorrect) {
+            if(correct) {
                 ((QuizWorld)getWorld()).rightAnswer();
             }
             else {
@@ -63,5 +64,5 @@ public class Answer extends Actor
         else {
             draw(Color.BLACK);
         }
-    }
+    }  
 }

@@ -4,12 +4,17 @@ import java.util.ArrayList;
 import java.awt.Font;
 import java.awt.Color;
 
-
+/**
+ * A question the user is asked.
+ * 
+ * @author Enigma
+ * @version 2016/10/20
+ */
 public class Question extends Actor {
 
     private String[] text;
     private List<Answer> answers;
-    private Explain explanation;
+    private Explanation explanation;
     
     /**
      * Create a new question.
@@ -23,13 +28,13 @@ public class Question extends Actor {
      * Set the explanation for this question.
      */
     public void setExplanation(String explanation) {
-        this.explanation = new Explain(explanation);
+        this.explanation = new Explanation(explanation);
     }
     
     /**
      * Get the explanation for this question.
      */
-    public Explain getExplanation() {
+    public Explanation getExplanation() {
         return explanation;
     }
     
@@ -45,16 +50,36 @@ public class Question extends Actor {
      */
     public void addedToWorld(World world) {
         GreenfootImage image = new GreenfootImage(500, 100);
-        image.setFont(new Font("SansSerif", Font.BOLD, 16));
+        GreenfootImage image2 = new GreenfootImage(500, 100);
+           
+        
+        image2.drawRect(0,0,500,500);
+        image2.fillRect(0,0,500,500);
+        image2.setColor(Color.PINK);
+        image2.setTransparency(100);
+        setImage(image2);        
+        
+        
+        image.setFont(new Font("SansSerif", Font.BOLD, 20));
 
+        
+        
         for(int i=0 ; i<text.length ; i++) {
+           
             image.drawString(text[i], 10, 20+(i*20));
+            image.setColor(Color.BLACK);
+            
         }
         
         setImage(image);
-        
+        setLocation(250,100);
+        //image.setColor(Color.RED);
+        //image.fill();
+
+     
+        // change the this code to formast answers.
         for(int i=0 ; i<answers.size() ; i++) {
-            getWorld().addObject(answers.get(i), 250, (text.length*30)+i*40);
+            getWorld().addObject(answers.get(i), 200, (text.length*30)+i*50);
         }
     }
 

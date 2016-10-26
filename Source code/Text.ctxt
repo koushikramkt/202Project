@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=Text
+comment0.text=\r\n\ Some\ text\ that's\ displayed\ in\ the\ world.\r\n\ \r\n\ @author\ Michael\ Berry\ (mjrb4)\r\n\ @version\ 07/05/09\r\n
 comment1.params=text
 comment1.target=Text(java.lang.String)
 comment1.text=\r\n\ Create\ some\ text\r\n

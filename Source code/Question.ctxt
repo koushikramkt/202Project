@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=Question
+comment0.text=\r\n\ A\ question\ the\ user\ is\ asked.\r\n\ \r\n\ @author\ Enigma\r\n\ @version\ 2016/10/20\r\n
 comment1.params=question\ answers
 comment1.target=Question(java.lang.String,\ java.util.List)
 comment1.text=\r\n\ Create\ a\ new\ question.\r\n
@@ -7,7 +8,7 @@ comment2.params=explanation
 comment2.target=void\ setExplanation(java.lang.String)
 comment2.text=\r\n\ Set\ the\ explanation\ for\ this\ question.\r\n
 comment3.params=
-comment3.target=Explain\ getExplanation()
+comment3.target=Explanation\ getExplanation()
 comment3.text=\r\n\ Get\ the\ explanation\ for\ this\ question.\r\n
 comment4.params=
 comment4.target=boolean\ hasExplanation()

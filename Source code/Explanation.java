@@ -1,8 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Font;
 
-
-public class Explain extends Actor
+/**
+ * An explanation displayed after each question.
+ * 
+ * @author Michael Berry (mjrb4)
+ * @version 07/05/09
+ */
+public class Explanation extends Actor
 {
     private String[] text;
 
@@ -10,7 +15,7 @@ public class Explain extends Actor
      * Create a new explanation, and wrap
      * it nicely.
      */
-    public Explain(String text) {
+    public Explanation(String text) {
         this.text = QuizWorld.wordWrap(text);
     }
     
