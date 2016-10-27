@@ -10,7 +10,8 @@ public class Easy implements GameLevel
      ArrayList<Question> questions;
      public Easy()
      {
-         questions = new ArrayList<Question>();
+        questions = new ArrayList<Question>();
+        
         
         //-------
         String questionText = "What would \"System.out.println(01234);\" output?";
