@@ -1,0 +1,9 @@
+2016/10/25
+We wrote a simple prototype for the game with minimum functionality. After the development, we took a look at the integrity of the application. Also, this prototype has the minimum components and it covers all the aspects of the game clearly.
+
+2016/10/26
+We have started following scrum methodology and started logging time on Excel sheet. We felt that this is a better approach for development considering we get the clearest picture of who is working on what? And how they are spending their time on specific task.
+
+ 
+2016/10/29
+Today, we did code review for most of the branches on the repo. I was more focused on the integrity of the component reviewed. Also, we shared knowledge on design patterns and AWS as we are planning to integrate these things into our project.
