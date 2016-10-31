@@ -181,12 +181,12 @@ public class Hard implements GameLevel
         question12.setExplanation(explanation12);
         questions.add(question12);
 
-        String questionText13 = "System.out.println((float)987654321); will print:";
+        String questionText13 = " This is the encryption algorithm that will begin to supplant the Data Encryption Standard (DES) - and later Triple DES - over the next few years as the new standard encryption algorithm. ";
         ArrayList<Answer> answers13 = new ArrayList<Answer>();
-        answers13.add(new Answer("987654321", false));
-        answers13.add(new Answer("9.8765434E8", true));
-        answers13.add(new Answer("9.87654321E8", false));
-        answers13.add(new Answer("9.87654321E16", false));
+        answers13.add(new Answer("Rijndael ", true));
+        answers13.add(new Answer("9.Kerberos ", false));
+        answers13.add(new Answer("Blowfish ", false));
+        answers13.add(new Answer("IPsec", false));
         Collections.shuffle(answers13);
         Question question13 = new Question(questionText13, answers13);
         String explanation13 = "Float can't store integer numbers as accurately as int can - and the result is that a large integer ";
