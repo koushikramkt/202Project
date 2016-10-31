@@ -14,12 +14,12 @@ public class Easy implements GameLevel
         
         
         //-------
-        String questionText = "What would \"System.out.println(01234);\" output?";
+        String questionText = "In cryptography, what is cipher?";
         ArrayList<Answer> answers = new ArrayList<Answer>();
-        answers.add(new Answer("01234", false));
-        answers.add(new Answer("Error", false));
-        answers.add(new Answer("668", true));
-        answers.add(new Answer("1234", false));
+        answers.add(new Answer("a) algorithm for performing encryption and decryption", false));
+        answers.add(new Answer("b) encrypted message", false));
+        answers.add(new Answer("c) both (a) and (b)", false));
+        answers.add(new Answer("d) none of the mentioned", true));
         Collections.shuffle(answers);
         Question question = new Question(questionText, answers);
         String explanation = "You may be rather baffled with this concept - the answer 668 seems completely illogical. ";
