@@ -13,7 +13,7 @@ public class Hard implements GameLevel
          questions = new ArrayList<Question>();
         
         //-------
-        String questionText = "What would \"System.out.println(01234);\" output?";
+        String questionText = "?";
         ArrayList<Answer> answers = new ArrayList<Answer>();
         answers.add(new Answer("01234", false));
         answers.add(new Answer("Error", false));

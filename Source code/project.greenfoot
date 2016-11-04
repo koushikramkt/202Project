@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Sun Oct 30 23:21:05 PDT 2016
+#Thu Nov 03 18:45:44 PDT 2016
 target16.name=Medium
 editor.swing.0.y=27
 editor.swing.0.x=0
@@ -286,5 +286,5 @@ class.How_to_play.superclass=greenfoot.Actor
 target18.typeParameters=
 target19.showInterface=false
 target1.height=50
-mainWindow.width=1382
 target4.typeParameters=
+mainWindow.width=1382
