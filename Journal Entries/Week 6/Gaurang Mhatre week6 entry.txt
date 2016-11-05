@@ -1,0 +1,15 @@
+2016/11/01
+We started with distributing the tasks. as we choose to work on design patterns.
+We started learning design patterns. Our main focus was to read about singleton, 
+observer, State, and Adaptor.
+
+
+2016/11/04
+As per the plan, we decided to implement the scoring with observer design pattern.
+and Game difficulty level with State Adaptor.
+
+ 
+2016/11/05
+We are also working on design the UI of the game. Where the primary goal is to keep it as simple as possible.
+The UI is looking very simple and understandable for the kids. The modules of the games are taking shape now.
+We are also planning to test with beta testers just to check if the developed game is simple to understand or not.
