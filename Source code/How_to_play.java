@@ -36,6 +36,7 @@ public class How_to_play extends Actor
                     GreenfootImage image = new GreenfootImage(500, 100);
                     setImage(image);
                     System.out.println("I am inside");
+                    
                     for(int i=0; i<text.size() ; i++){
                     getWorld().addObject(text.get(i), i+250, (i*20+100));
     }

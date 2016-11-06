@@ -40,29 +40,31 @@ public class QuizWorld extends World
         //questions = (new Easy()).getQuestion();
                
         xtext= new ArrayList<Text>();
-        Text rule1=new Text("Single player mode");
+        Text rule1=new Text("How to Play!!!");
         xtext.add(rule1);
-        Text rule2=new Text("•	Player gets 1 point for each correct answer.");
+        Text rule2=new Text("Single player mode");
         xtext.add(rule2);
-        Text rule3=new Text("•	There are no negative points for an incorrect answer.");
+        Text rule3=new Text("•	Player gets 1 point for each correct answer.");
         xtext.add(rule3);
-        Text rule4=new Text("•	A player can view hints about the question anytime.");
+        Text rule4=new Text("•	There are no negative points for an incorrect answer.");
         xtext.add(rule4);
-        Text rule5=new Text(" ");
+        Text rule5=new Text("•	A player can view hints about the question anytime.");
         xtext.add(rule5);
-        Text rule6=new Text("Multiplayer mode");
+        Text rule6=new Text(" ");
         xtext.add(rule6);
-        Text rule7=new Text("•	Players who selects the correct answer first gets 1 point.");
+        Text rule7=new Text("Multiplayer mode");
         xtext.add(rule7);
-        Text rule8=new Text("•	A new question will be displayed to both the players, once any players answers correctly");
+        Text rule8=new Text("• Players who selects the correct answer first gets 1 point.");
         xtext.add(rule8);
-        Text rule9=new Text("once any players answers correctly");
-        Text rule10=new Text("•	There are no negative points for an incorrect answer.");
-        xtext.add(rule10);
-        Text rule11=new Text("•	A player can anytime click on the hints button to get a hint.");
+        Text rule9=new Text("• A new question will be displayed to both the players, once any players answers correctly");
+        xtext.add(rule9);
+        Text rule10=new Text("once any players answers correctly");
+        Text rule11=new Text("•	There are no negative points for an incorrect answer.");
         xtext.add(rule11);
-        Text rule12=new Text("•	At the end of each round the player who has more score is the winner.");
+        Text rule12=new Text("•	A player can anytime click on the hints button to get a hint.");
         xtext.add(rule12);
+        Text rule13=new Text("• At the end of each round the player who has more score wins");
+        xtext.add(rule13);
         xrules = new How_to_play(xtext);
        
         
