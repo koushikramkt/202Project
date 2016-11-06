@@ -54,7 +54,7 @@ public class QuizWorld extends World
         xtext.add(rule6);
         Text rule7=new Text("Multiplayer mode");
         xtext.add(rule7);
-        Text rule8=new Text("• Players who selects the correct answer first gets 1 point.");
+        Text rule8=new Text("• Players who selects the correct answer first gets 1 point");
         xtext.add(rule8);
         Text rule9=new Text("• A new question will be displayed to both the players, once any players answers correctly");
         xtext.add(rule9);
@@ -63,8 +63,10 @@ public class QuizWorld extends World
         xtext.add(rule11);
         Text rule12=new Text("•	A player can anytime click on the hints button to get a hint.");
         xtext.add(rule12);
-        Text rule13=new Text("• At the end of each round the player who has more score wins");
+        Text rule13=new Text("• At the end of each round the player who has more score ");
         xtext.add(rule13);
+        Text rule14=new Text("  wins");
+        xtext.add(rule14);
         xrules = new How_to_play(xtext);
        
         
