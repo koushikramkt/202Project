@@ -44,11 +44,11 @@ public class QuizWorld extends World
         xtext.add(rule1);
         Text rule2=new Text("Single player mode");
         xtext.add(rule2);
-        Text rule3=new Text("•	Player gets 1 point for each correct answer.");
+        Text rule3=new Text("•  Player gets 1 point for each correct answer.");
         xtext.add(rule3);
-        Text rule4=new Text("•	There are no negative points for an incorrect answer.");
+        Text rule4=new Text("•  There are no negative points for an incorrect answer.");
         xtext.add(rule4);
-        Text rule5=new Text("•	A player can view hints about the question anytime.");
+        Text rule5=new Text("•  A player can view hints about the question anytime.");
         xtext.add(rule5);
         Text rule6=new Text(" ");
         xtext.add(rule6);
@@ -59,9 +59,9 @@ public class QuizWorld extends World
         Text rule9=new Text("• A new question will be displayed to both the players, once any players answers correctly");
         xtext.add(rule9);
         Text rule10=new Text("once any players answers correctly");
-        Text rule11=new Text("•	There are no negative points for an incorrect answer.");
+        Text rule11=new Text("• There are no negative points for an incorrect answer.");
         xtext.add(rule11);
-        Text rule12=new Text("•	A player can anytime click on the hints button to get a hint.");
+        Text rule12=new Text("• A player can anytime click on the hints button to get a hint.");
         xtext.add(rule12);
         Text rule13=new Text("• At the end of each round the player who has more score ");
         xtext.add(rule13);
@@ -196,10 +196,21 @@ public class QuizWorld extends World
         if(question.hasExplanation()) {
             clear();
             if(correct) {
-                addObject(new Text("Correct!"), 250, 30);
+                        int total = 13;
+                        addObject(new Text("Correct!"), 250, 30);
+                        Text text = new Text("You scored: " + correct + "/" + total + ".");
+                                Text text2 = new Text("That's " + (int)((((double)this.correct)/total)*100) + "%!");
+                        addObject(text, 250, 400);
+                                addObject(text2, 250, 430);
+                        
             }
             else {
+                                        int total = 13;
                 addObject(new Text("Wrong!"), 250, 30);
+                Text text = new Text("You scored: " + correct + "/" + total + ".");
+                                                Text text2 = new Text("That's " + (int)((((double)this.correct)/total)*100) + "%!");
+                                                                                addObject(text2, 250, 430);
+                        addObject(text, 250, 400);
             }
             addObject(question.getExplanation(), 250, 140);
             addObject(new Text("Press space to continue..."), 250, getHeight()-30);

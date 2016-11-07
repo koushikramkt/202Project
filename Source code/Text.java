@@ -1,12 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Font;
 
-/**
- * Some text that's displayed in the world.
- * 
- * @author Michael Berry (mjrb4)
- * @version 07/05/09
- */
+
 public class Text extends Actor
 {
     private String text;

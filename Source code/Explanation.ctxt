@@ -1,16 +1,15 @@
 #BlueJ class context
 comment0.target=Explanation
-comment0.text=\r\n\ An\ explanation\ displayed\ after\ each\ question.\r\n\ \r\n\ @author\ Michael\ Berry\ (mjrb4)\r\n\ @version\ 07/05/09\r\n
 comment1.params=text
 comment1.target=Explanation(java.lang.String)
-comment1.text=\r\n\ Create\ a\ new\ explanation,\ and\ wrap\r\n\ it\ nicely.\r\n
+comment1.text=\n\ Create\ a\ new\ explanation,\ and\ wrap\n\ it\ nicely.\n
 comment2.params=world
 comment2.target=void\ addedToWorld(greenfoot.World)
-comment2.text=\r\n\ When\ the\ object\ is\ added\ to\ the\ world,\ draw\ it.\r\n
+comment2.text=\n\ When\ the\ object\ is\ added\ to\ the\ world,\ draw\ it.\n
 comment3.params=
 comment3.target=void\ draw()
-comment3.text=\r\n\ Draw\ on\ screen.\r\n
+comment3.text=\n\ Draw\ on\ screen.\n
 comment4.params=
 comment4.target=void\ act()
-comment4.text=\r\n\ If\ space\ is\ pressed,\ advance\ to\ the\ next\ question.\r\n
+comment4.text=\n\ If\ space\ is\ pressed,\ advance\ to\ the\ next\ question.\n
 numComments=5

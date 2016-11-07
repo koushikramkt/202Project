@@ -1,12 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Font;
 
-/**
- * An explanation displayed after each question.
- * 
- * @author Michael Berry (mjrb4)
- * @version 07/05/09
- */
+
 public class Explanation extends Actor
 {
     private String[] text;
