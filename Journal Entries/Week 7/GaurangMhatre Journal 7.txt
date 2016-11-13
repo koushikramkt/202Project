@@ -1,0 +1,8 @@
+The core value I have is building the integrity in. This week I have started to work with the multiplayer version of the game. As we have good control over the design patterns now. we feel quite confident that we can implement the server with design patterns.
+
+Also, I have spent sufficient time on debugging the issue with quiz Answers. This week is very critical for us as we are expecting to start completing the modules for the games. The Game is really taking shape now. 
+
+Rohan and verdant are also contributing to the gameplay aspect of it. We are expecting a prototype of the game by end of this week.
+
+We have also planned to give the demo to a number of peoples you can review the game for us. and we can understand their feedback. This is really important for as of now. because it can include the changes to the game after that.
+We are right now at a very good stage in the project where we can see visualize the end product. 
