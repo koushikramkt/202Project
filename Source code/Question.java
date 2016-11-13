@@ -66,7 +66,7 @@ public class Question extends Actor {
         
         for(int i=0 ; i<text.length ; i++) {
            
-            image.drawString(text[i], 10, 20+(i*20));
+            image.drawString(text[i], 10, 20+(i*25));
             image.setColor(Color.BLACK);
             
         }
