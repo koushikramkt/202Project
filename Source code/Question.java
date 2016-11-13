@@ -60,7 +60,7 @@ public class Question extends Actor {
         setImage(image2);        
         
         
-        image.setFont(new Font("SansSerif", Font.BOLD, 20));
+        image.setFont(new Font("SansSerif", Font.BOLD, 30));
 
         
         
