@@ -16,11 +16,11 @@ public class Rules extends Button
     {
         // Add your action code here.
         if(Greenfoot.mouseClicked(this)){
-            startAction();  
+            startActivity();  
         }
     }
     
-    public void startAction()
+    public void startActivity()
     {
            getWorldOfType(QuizWorld.class).setInfoPage();
            //getWorld().addObject(new CopacabanaBrazil(),0,0);
