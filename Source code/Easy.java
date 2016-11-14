@@ -14,12 +14,27 @@ public class Easy implements GameLevel
         
         
         //-------
-        String questionText = "In cryptography, what is cipher?";
+        // String questionText = "In cryptography, what is cipher?";
+        // ArrayList<Answer> answers = new ArrayList<Answer>();
+        // answers.add(new Answer("a) algorithm for performing encryption and decryption", false));
+        // answers.add(new Answer("b) encrypted message", false));
+        // answers.add(new Answer("c) both (a) and (b)", false));
+        // answers.add(new Answer("d) none of the mentioned", true));
+        // Collections.shuffle(answers);
+        // Question question = new Question(questionText, answers);
+        // String explanation = "You may be rather baffled with this concept - the answer 668 seems completely illogical. ";
+        // explanation += "However - there is method to this madness. If you start an integer with 0 in Java, Java will ";
+        // explanation += "read that integer as an octal number. Since the decimal representation of the octal number 1234 ";
+        // explanation += "is 668, this is what will be printed out. In the same way, you can also write integers in ";
+        // explanation += "hexadecimal by prefixing the integer with \"0x\".";
+        // question.setExplanation(explanation);
+        // questions.add(question);
+        String questionText = "An asymmetric-key (or public-key) cipher uses?";
         ArrayList<Answer> answers = new ArrayList<Answer>();
-        answers.add(new Answer("a) algorithm for performing encryption and decryption", false));
-        answers.add(new Answer("b) encrypted message", false));
-        answers.add(new Answer("c) both (a) and (b)", false));
-        answers.add(new Answer("d) none of the mentioned", true));
+        answers.add(new Answer("1 key", false));
+        answers.add(new Answer("2 keys", true));
+        answers.add(new Answer("3 keys", false));
+        answers.add(new Answer("4 keys", false));
         Collections.shuffle(answers);
         Question question = new Question(questionText, answers);
         String explanation = "You may be rather baffled with this concept - the answer 668 seems completely illogical. ";
