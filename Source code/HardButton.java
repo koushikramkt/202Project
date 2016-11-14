@@ -22,7 +22,7 @@ public class HardButton extends Button
     }    
     
     public void startAction(){
-      // getWorldOfType(QuizWorld.class).setStartGame();
+       getWorldOfType(QuizWorld.class).setStartGame(new Hard());
        //getWorld().addObject(new CopacabanaBrazil(),0,0);
     }  
 }

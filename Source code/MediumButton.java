@@ -22,7 +22,7 @@ public class MediumButton extends Button
     }    
     
     public void startAction(){
-      // getWorldOfType(QuizWorld.class).setStartGame();
+       getWorldOfType(QuizWorld.class).setStartGame(new Medium());
        //getWorld().addObject(new CopacabanaBrazil(),0,0);
     }   
 }

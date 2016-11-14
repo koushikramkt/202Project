@@ -28,7 +28,7 @@ public class StartScreen extends World
         
         HardButton hb = new HardButton();
         addObject(hb,919,359);
-        hb.setLocation(462,333);
+        hb.setLocation(462,253);
 
     }
 }

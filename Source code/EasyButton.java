@@ -22,7 +22,7 @@ public class EasyButton extends Button
     }    
     
     public void startAction(){
-      // getWorldOfType(QuizWorld.class).setStartGame();
+       getWorldOfType(QuizWorld.class).setStartGame(new Easy());
        //getWorld().addObject(new CopacabanaBrazil(),0,0);
     }
 }

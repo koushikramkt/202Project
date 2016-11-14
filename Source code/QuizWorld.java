@@ -84,10 +84,22 @@ public class QuizWorld extends World
     }
 
     public void prepare(){
+        
+        EasyButton eb = new EasyButton();
+        addObject(eb, 1300,700);
+        eb.setLocation(484,112);
 
-        startgame = new StartGame();
+        MediumButton mb = new MediumButton();
+        addObject(mb,919,359);
+        mb.setLocation(484,212);
+        
+        HardButton hb = new HardButton();
+        addObject(hb,919,359);
+        hb.setLocation(484,312);
+        
+        /*startgame = new StartGame();
         addObject(startgame, 1300,700);
-        startgame.setLocation(812,174);
+        startgame.setLocation(812,174);*/
 
         rules = new Rules();
         addObject(rules,919,359);
@@ -98,17 +110,37 @@ public class QuizWorld extends World
 
         rules.setLocation(814,239);
         rules.setLocation(673,240);
-        startgame.setLocation(668,175);
+        //startgame.setLocation(668,175);
         rules.setLocation(427,248);
-        startgame.setLocation(428,188);
+        //startgame.setLocation(428,188);
         title.setLocation(169,53);
-        startgame.setLocation(484,112);
-        rules.setLocation(484,176);
+        //startgame.setLocation(484,112);
+        rules.setLocation(484,446);
     }
     
+    public void setStartGame(){ //@Rohan,  you can call your classes 
+        
+        
+        setBackground(new GreenfootImage("QuestionsBackground.png"));
+        removeObject(startgame);
+        
+        showQuestion();
+        
+       //System.out.println("Inside StartGame!");     
+       
+       //Clean 
+       /*rules, startGame, title to empty the screen and the you can add your 
+        * objects in this method.
+        */
+       
+    }
   
     
-    public void setStartGame(){ //@Rohan,  you can call your classes 
+    public void setStartGame(GameLevel gl){ //@Rohan,  you can call your classes 
+        
+        
+        changeGameLevel(gl);
+        
         setBackground(new GreenfootImage("QuestionsBackground.png"));
         removeObject(startgame);
         
