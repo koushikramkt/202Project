@@ -13,7 +13,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class How_to_play extends Actor
 {
-    Button startGame;
+    Button back_button;
     /**
      * Act - do whatever the How_to_play wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -21,24 +21,27 @@ public class How_to_play extends Actor
     private List<Text> text;
     
     public How_to_play(List<Text> rules){
-        this.text=rules;
-        
-        
-        
+        this.text=rules;   
     }
     
     public void act() 
     {
-        // Add your action code here.
+
     }   
+
     
     public void addedToWorld(World world){
-                    GreenfootImage image = new GreenfootImage(500, 100);
+                    GreenfootImage image = new GreenfootImage(100, 100);
                     setImage(image);
-                    System.out.println("I am inside");
                     
                     for(int i=0; i<text.size() ; i++){
                     getWorld().addObject(text.get(i), i+250, (i*20+100));
-    }
+                }
+                    
+                back_button = new Back_Button();
+                getWorld().addObject(back_button,50,50);
+                back_button.setLocation(150,400);
+                    
+    
 }
 }
