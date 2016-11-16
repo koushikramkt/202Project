@@ -7,6 +7,11 @@ import java.util.Collections;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
+import org.json.JSONObject;
+import org.restlet.resource.*;
+import org.restlet.representation.* ;
+import org.restlet.ext.json.* ;
+import org.restlet.data.* ;
 /**
  * Write a description of class MyWorld here.
  *  
@@ -26,7 +31,9 @@ public class QuizWorld extends World
     private int ruleNum;
     private List<Text> xtext;
  
-       
+    private String URL = "http://localhost:8080/codeQuiz" ;
+    ClientResource client ; 
+           
     /**
      * Create all the questions and answers.
      * NOTE: This is not the best way to do this at all, in fact it's rather messy.
@@ -84,6 +91,8 @@ public class QuizWorld extends World
     }
 
     public void prepare(){
+        
+        callPOSTAPI(); //api call
         
         EasyButton eb = new EasyButton();
         addObject(eb, 1300,700);
@@ -308,6 +317,12 @@ public class QuizWorld extends World
         return (String[]) list.toArray(new String[list.size()]);
     }
     
-
+    private void callPOSTAPI(){
+        client = new ClientResource( URL ); 
+        /*JSONObject json_insert_quarter = new JSONObject();
+        json_insert_quarter.put("action", "insert-quarter");
+        client.post(new JsonRepresentation(json_insert_quarter), MediaType.APPLICATION_JSON);
+        */
+    }
     
 }
