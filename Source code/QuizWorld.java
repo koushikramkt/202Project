@@ -185,6 +185,12 @@ public class QuizWorld extends World
     private void showQuestion() {
         clear();
         addObject(questions.get(questionNum), 250, 50);
+        int total = 13;
+            Text text = new Text("You scored: " + correct + "/" + total + ".");
+                                Text text2 = new Text("That's " + (int)((((double)this.correct)/total)*100) + "%!");
+                        addObject(text, 250, 400);
+                                addObject(text2, 250, 430);
+        
     }
     
     /**
@@ -220,6 +226,11 @@ public class QuizWorld extends World
         }
         else {
             showQuestion();
+                                    int total = 13;
+            Text text = new Text("You scored: " + correct + "/" + total + ".");
+                                Text text2 = new Text("That's " + (int)((((double)this.correct)/total)*100) + "%!");
+                        addObject(text, 250, 400);
+                                addObject(text2, 250, 430);
         }
     }
     
