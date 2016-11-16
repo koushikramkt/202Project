@@ -1,19 +1,19 @@
 #BlueJ class context
 comment0.target=Question
-comment0.text=\n\ A\ question\ the\ user\ is\ asked.\n\ \n\ @author\ Enigma\n\ @version\ 2016/10/20\n
+comment0.text=\r\n\ A\ question\ the\ user\ is\ asked.\r\n\ \r\n\ @author\ Enigma\r\n\ @version\ 2016/10/20\r\n
 comment1.params=question\ answers
 comment1.target=Question(java.lang.String,\ java.util.List)
-comment1.text=\n\ Create\ a\ new\ question.\n
+comment1.text=\r\n\ Create\ a\ new\ question.\r\n
 comment2.params=explanation
 comment2.target=void\ setExplanation(java.lang.String)
-comment2.text=\n\ Set\ the\ explanation\ for\ this\ question.\n
+comment2.text=\r\n\ Set\ the\ explanation\ for\ this\ question.\r\n
 comment3.params=
 comment3.target=Explanation\ getExplanation()
-comment3.text=\n\ Get\ the\ explanation\ for\ this\ question.\n
+comment3.text=\r\n\ Get\ the\ explanation\ for\ this\ question.\r\n
 comment4.params=
 comment4.target=boolean\ hasExplanation()
-comment4.text=\n\ Determine\ whether\ this\ question\ has\ an\ explanation.\n
+comment4.text=\r\n\ Determine\ whether\ this\ question\ has\ an\ explanation.\r\n
 comment5.params=world
 comment5.target=void\ addedToWorld(greenfoot.World)
-comment5.text=\n\ Draw\ when\ added\ to\ the\ world.\n
+comment5.text=\r\n\ Draw\ when\ added\ to\ the\ world.\r\n
 numComments=6

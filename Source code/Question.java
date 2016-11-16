@@ -79,7 +79,8 @@ public class Question extends Actor {
      
         // change the this code to formast answers.
         for(int i=0 ; i<answers.size() ; i++) {
-            getWorld().addObject(answers.get(i), 200, (text.length*30)+i*50);
+           
+            getWorld().addObject(answers.get(i), 200, (text.length*30)+i*80);
         }
     }
 

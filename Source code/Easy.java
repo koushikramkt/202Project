@@ -11,7 +11,12 @@ public class Easy implements GameLevel
      public Easy()
      {
         questions = new ArrayList<Question>();
-        
+        loadQuestions();
+     }
+     
+     public void loadQuestions()
+     {
+               
         
         //-------
         // String questionText = "In cryptography, what is cipher?";

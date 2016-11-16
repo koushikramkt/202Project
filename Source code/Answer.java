@@ -47,6 +47,7 @@ public class Answer extends Actor
      */
     public void act() {
         if(Greenfoot.mouseClicked(this)) {
+            System.out.println(text + " " + correct);
             if(correct) {
                 ((QuizWorld)getWorld()).rightAnswer();
             }
