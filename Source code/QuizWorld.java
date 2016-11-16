@@ -196,13 +196,13 @@ public class QuizWorld extends World
      */
     private void showQuestion() {
         clear();
-        System.out.println(questionNum);
+       
         addObject(questions.get(questionNum), 250, 50);
         int total = 13;
             Text text = new Text("You scored: " + correct + "/" + total + ".");
             Text text2 = new Text("That's " + (int)((((double)this.correct)/total)*100) + "%!");
-            addObject(text, 250, 400);
-            addObject(text2, 250, 430);
+            addObject(text, 250, 500);
+            addObject(text2, 250, 530);
     }
     
     /**
@@ -241,8 +241,8 @@ public class QuizWorld extends World
                                     int total = 13;
             Text text = new Text("You scored: " + correct + "/" + total + ".");
                                 Text text2 = new Text("That's " + (int)((((double)this.correct)/total)*100) + "%!");
-                        addObject(text, 250, 400);
-                                addObject(text2, 250, 430);
+                        addObject(text, 250, 500);
+                                addObject(text2, 250, 530);
         }
     }
     
@@ -254,25 +254,27 @@ public class QuizWorld extends World
         Question question = questions.get(questionNum);
         if(question.hasExplanation()) {
             clear();
+            
             if(correct) {
                         int total = 13;
                         addObject(new Text("Correct!"), 250, 30);
-                        Text text = new Text("You scored: " + correct + "/" + total + ".");
+                        Text text = new Text("You scored: " + this.correct + "/" + total + ".");
                                 Text text2 = new Text("That's " + (int)((((double)this.correct)/total)*100) + "%!");
-                        addObject(text, 250, 400);
-                                addObject(text2, 250, 430);
+                        addObject(text, 250, 500);
+                                addObject(text2, 250, 530);
                         
             }
             else {
                                         int total = 13;
                 addObject(new Text("Wrong!"), 250, 30);
-                Text text = new Text("You scored: " + correct + "/" + total + ".");
+                Text text = new Text("You scored: " + this.correct + "/" + total + ".");
                                                 Text text2 = new Text("That's " + (int)((((double)this.correct)/total)*100) + "%!");
-                                                                                addObject(text2, 250, 430);
-                        addObject(text, 250, 400);
+                                                                               
+                        addObject(text, 250, 500);
+                         addObject(text2, 250, 530);
             }
             addObject(question.getExplanation(), 250, 140);
-            addObject(new Text("Press space to continue..."), 250, getHeight()-30);
+            //addObject(new Text("Press space to continue..."), 250, getHeight()-30);
         }
         else { 
             nextQuestion();
