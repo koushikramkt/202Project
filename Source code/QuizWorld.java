@@ -100,22 +100,27 @@ public class QuizWorld extends World
         /*startgame = new StartGame();
         addObject(startgame, 1300,700);
         startgame.setLocation(812,174);*/
-
+        
+        Multiplayer multi = new Multiplayer();
+        addObject(multi, 919, 359);
+        multi.setLocation(484, 370);
+        
         rules = new Rules();
         addObject(rules,919,359);
-        rules.setLocation(914,353);
+        rules.setLocation(484,470);
+        
         Title title = new Title();
         addObject(title,301,81);
         title.setLocation(262,101);
 
-        rules.setLocation(814,239);
-        rules.setLocation(673,240);
+        //rules.setLocation(814,239);
+        //rules.setLocation(673,240);
         //startgame.setLocation(668,175);
-        rules.setLocation(427,248);
+        //rules.setLocation(427,248);
         //startgame.setLocation(428,188);
-        title.setLocation(169,53);
+        //title.setLocation(169,53);
         //startgame.setLocation(484,112);
-        rules.setLocation(484,446);
+
     }
     
     public void setStartGame(){ //@Rohan,  you can call your classes 
@@ -161,13 +166,12 @@ public class QuizWorld extends World
         removeObject(rules);
        
         showrules(); 
-        
-       //System.out.println("Inside InfoPage!");       
-       //Clean 
-       /*rules, startGame, title to empty the screen and 
-        * the you can add your objects in this method.
-        */
 
+    }
+    
+    public void setWaitPage(){
+        setBackground(new GreenfootImage("QuestionsBackground.png"));
+        clear();
     }
     
     private void showrules(){
