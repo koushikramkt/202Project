@@ -15,12 +15,12 @@ public class WaitingPage extends Actor
     public void act() 
     {
         // Add your action code here.
-
+        GreenfootImage image = new GreenfootImage(100, 100);
+        setImage(image);
     } 
     
     public void addedToWorld()
     {
-        GreenfootImage image = new GreenfootImage(100, 100);
-        setImage(image);
+
     }
 }

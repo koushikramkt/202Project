@@ -38,9 +38,9 @@ public class How_to_play extends Actor
                     getWorld().addObject(text.get(i), i+250, (i*20+100));
                 }
                     
-                back_button = new Back_Button();
-                getWorld().addObject(back_button,50,50);
-                back_button.setLocation(150,400);
+              //  back_button = new Back_Button();
+              //  getWorld().addObject(back_button,50,50);
+              //  back_button.setLocation(150,400);
                     
     
 }

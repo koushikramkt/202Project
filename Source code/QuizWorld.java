@@ -166,12 +166,24 @@ public class QuizWorld extends World
         removeObject(rules);
        
         showrules(); 
+        Rules rules = new Rules();
+        addObject(rules, 10, 10);
+        rules.setLocation(120,50);
+        
+                Back_Button back_button = new Back_Button();
+                addObject(back_button,10,10);
+                back_button.setLocation(150,440);
 
     }
     
     public void setWaitPage(){
-        setBackground(new GreenfootImage("QuestionsBackground.png"));
+        setBackground(new GreenfootImage("QuizWorldVer2.jpg"));
         clear();
+        
+        Waiting waitmsg = new Waiting();
+        addObject(waitmsg,50,50);
+        waitmsg.setLocation(250,250);
+  
     }
     
     private void showrules(){
