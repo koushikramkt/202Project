@@ -1,0 +1,7 @@
+The core value I have is building the integrity in. This week WE are almost done with multiplayer version of the game. As we have good control over the design patterns now. we feel quite confident that we can implement the server with design patterns.
+
+Also clint multiplayer version is also taking shape now. This week is very critical for us as we are expecting to start completing the modules for the games.  
+
+Rohan and verdant are also contributing to the gameplay aspect of it. And Kaushik is implementing design pattern for score keeping. We are done with a prototype of the game by end of this week.
+
+We are also giving demos to number of peoples who can review the game for us. This is really important for as of now. because it can include the changes to the game after that. Also we are planning to deploy the server on AWS this week.
