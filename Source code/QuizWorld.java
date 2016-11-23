@@ -95,12 +95,14 @@ public class QuizWorld extends World
 
     public void prepare(){
         /*------------test api calls------*/
-        callRegisterPlayers();
+        /*callRegisterPlayers();
         callRegisterPlayers();
         callGetNumberOfPlayers();
         callSetScore();
-        callGetScore();
+        callGetScore();*/
         /*----------Test Ended------*/
+        
+        
         EasyButton eb = new EasyButton();
         addObject(eb, 1300,700);
         eb.setLocation(484,112);
@@ -323,16 +325,8 @@ public class QuizWorld extends World
         while (m.find()) list.add(m.group());
         return (String[]) list.toArray(new String[list.size()]);
     }
-    
-    private void callPOSTAPI(){
-        //client = new ClientResource( URL ); 
-        /*JSONObject json_insert_quarter = new JSONObject();
-        json_insert_quarter.put("action", "insert-quarter");
-        client.post(new JsonRepresentation(json_insert_quarter), MediaType.APPLICATION_JSON);
-        */
-    }
-    
-    private void callRegisterPlayers()//set codeQuiz
+       
+    public void callRegisterPlayers()//set codeQuiz
     {
         //params
         //{"action":"NewUser"}
@@ -342,7 +336,7 @@ public class QuizWorld extends World
             json.put("action", "NewUser");
             Representation result_string = clientPlayers.post(new JsonRepresentation(json), MediaType.APPLICATION_JSON);
             JSONObject jsonreply = new JSONObject(result_string.getText());
-            int playerId = ((int)jsonreply.get("playerId"))-1;
+            int playerId = ((int)jsonreply.get("playerId"));
             System.out.println("callRegisterPlayers- New playerId:"+playerId);
         } catch (ResourceException e) {
             e.printStackTrace();
@@ -352,24 +346,28 @@ public class QuizWorld extends World
         //reply
        /* {"playerId": 1}*/
     }
-    private void callGetNumberOfPlayers()//get codeQuiz
+    public int callGetNumberOfPlayers()//get codeQuiz
     {
+        int numberOfUsers = 0;
          try{
             clientPlayers = new ClientResource( URLplayers );
             Representation result_string = clientPlayers.get();
             JSONObject jsonreply = new JSONObject(result_string.getText());
-            int numberOfUsers = (int) jsonreply.get("numberOfUser");
+            numberOfUsers = (int) jsonreply.get("numberOfUser");
             System.out.println("callGetNumberOfPlayers- numberOfUsers:"+numberOfUsers);
+           
         } catch (ResourceException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        
+        return numberOfUsers;
         //reply
         //{ "numberOfUser": 2}    start game only when count is 2
         
     }
-    private void callSetScore() //set codeQuizScore
+    public void callSetScore() //set codeQuizScore
     {
         //params
         //{"playerId":"0","score":"100"} or 
@@ -395,7 +393,7 @@ public class QuizWorld extends World
         //reply
         //{"playerId":0}
     }
-    private void callGetScore() //get codeQuizScore
+    public void callGetScore() //get codeQuizScore
     {
          try{
             clientScoreKeeper = new ClientResource( URLscore );

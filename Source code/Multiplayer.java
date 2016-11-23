@@ -21,6 +21,9 @@ public class Multiplayer extends Button
     }    
     
     public void startAction(){
+        
+        getWorldOfType(QuizWorld.class).callRegisterPlayers();
+        
         getWorldOfType(QuizWorld.class).setWaitPage();
     }
 }

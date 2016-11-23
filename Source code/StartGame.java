@@ -22,7 +22,10 @@ public class StartGame extends Button
     }    
     
     public void startAction(){
+        
+        
        getWorldOfType(QuizWorld.class).setStartGame();
+       
        //getWorld().addObject(new CopacabanaBrazil(),0,0);
     }
 }
