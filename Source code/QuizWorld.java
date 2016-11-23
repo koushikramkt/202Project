@@ -6,12 +6,13 @@ import java.util.List;
 import java.util.Collections;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
-
+ 
 import org.json.JSONObject;
 import org.restlet.resource.*;
 import org.restlet.representation.* ;
 import org.restlet.ext.json.* ;
 import org.restlet.data.* ;
+import java.io.IOException;
 /**
  * Write a description of class MyWorld here.
  *  
@@ -31,9 +32,11 @@ public class QuizWorld extends World
     private int ruleNum;
     private List<Text> xtext;
  
-    private String URL = "http://localhost:8080/codeQuiz" ;
-    ClientResource client ; 
-           
+    private String URLplayers = "http://localhost:8080/codeQuiz" ;
+     private String URLscore = "http://localhost:8080/codeQuizScore" ;
+    ClientResource clientPlayers ; 
+    ClientResource clientScoreKeeper ;
+    
     /**
      * Create all the questions and answers.
      * NOTE: This is not the best way to do this at all, in fact it's rather messy.
@@ -324,5 +327,89 @@ public class QuizWorld extends World
         client.post(new JsonRepresentation(json_insert_quarter), MediaType.APPLICATION_JSON);
         */
     }
+    
+    private void callRegisterPlayers()//set codeQuiz
+    {
+        //params
+        //{"action":"NewUser"}
+        try{
+            clientPlayers = new ClientResource( URLplayers ); 
+            JSONObject json = new JSONObject();
+            json.put("action", "NewUser");
+            Representation result_string = clientPlayers.post(new JsonRepresentation(json), MediaType.APPLICATION_JSON);
+            JSONObject jsonreply = new JSONObject(result_string.getText());
+            int playerId = (int)jsonreply.get("playerId");
+            System.out.println("playerId:"+playerId);
+        } catch (ResourceException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //reply
+       /* {"playerId": 1}*/
+    }
+    private void callGetNumberOfPlayers()//get codeQuiz
+    {
+         try{
+            clientPlayers = new ClientResource( URLplayers );
+            Representation result_string = clientPlayers.get();
+            JSONObject jsonreply = new JSONObject(result_string.getText());
+            int numberOfUsers = (int) jsonreply.get("numberOfUser");
+            System.out.println("numberOfUsers:"+numberOfUsers);
+        } catch (ResourceException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //reply
+        //{ "numberOfUser": 2}    start game only when count is 2
+        
+    }
+    private void callSetScore() //set codeQuizScore
+    {
+        //params
+        //{"playerId":"0","score":"100"} or 
+        //{"playerId":"1","score":"200"}
+        try{
+        int playerId=0;
+        int score =100;
+        
+        clientScoreKeeper =new ClientResource( URLscore ); 
+        JSONObject json = new JSONObject();
+        json.put("playerId", playerId+"");
+        json.put("score", score+"");
+        
+        Representation result_string = clientScoreKeeper.post(new JsonRepresentation(json), MediaType.APPLICATION_JSON);
+        JSONObject jsonreply = new JSONObject(result_string.getText());
+        int playerIdFromReply = (int)jsonreply.get("playerId");
+        System.out.println("playerId:"+playerIdFromReply);
+         } catch (ResourceException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //reply
+        //{"playerId":0}
+    }
+    private void callGetScore() //get codeQuizScore
+    {
+         try{
+            clientScoreKeeper = new ClientResource( URLscore );
+            Representation result_string = clientScoreKeeper.get();
+            JSONObject jsonreply = new JSONObject(result_string.getText());
+            int playerTwoScore = (int) jsonreply.get("PlayerTwoScore");
+            int playerOneScore = (int) jsonreply.get("PlayerOneScore");
+            System.out.println("playerTwoScore:"+playerTwoScore +"  playerOneScore:"+playerOneScore);
+        } catch (ResourceException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        //reply
+         //{"PlayerTwoScore":0,"PlayerOneScore":0}
+    }
+    
+    
     
 }

@@ -39,6 +39,7 @@ public class QuizMachine {
 	}
 
     public int setUserCount(){
+	
         return ++this.countUsers;
     }
 
