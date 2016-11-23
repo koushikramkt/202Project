@@ -1,9 +1,9 @@
 #Greenfoot properties
-#Wed Nov 23 09:01:14 PST 2016
+#Wed Nov 23 11:27:33 PST 2016
 target16.name=GameLevel
 dependency35.to=QuizWorld
-editor.swing.0.y=96
-editor.swing.0.x=55
+editor.swing.0.y=67
+editor.swing.0.x=241
 target26.width=80
 target2.name=Message
 class.Text.superclass=greenfoot.Actor
@@ -426,7 +426,7 @@ dependency47.from=QuizWorld
 readme.width=47
 target20.width=80
 mainWindow.height=744
-editor.swing.0.width=691
+editor.swing.0.width=690
 target5.showInterface=false
 target14.showInterface=false
 target26.height=50

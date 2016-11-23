@@ -94,9 +94,13 @@ public class QuizWorld extends World
     }
 
     public void prepare(){
-        
-        callPOSTAPI(); //api call
-        
+        /*------------test api calls------*/
+        callRegisterPlayers();
+        callRegisterPlayers();
+        callGetNumberOfPlayers();
+        callSetScore();
+        callGetScore();
+        /*----------Test Ended------*/
         EasyButton eb = new EasyButton();
         addObject(eb, 1300,700);
         eb.setLocation(484,112);
@@ -338,8 +342,8 @@ public class QuizWorld extends World
             json.put("action", "NewUser");
             Representation result_string = clientPlayers.post(new JsonRepresentation(json), MediaType.APPLICATION_JSON);
             JSONObject jsonreply = new JSONObject(result_string.getText());
-            int playerId = (int)jsonreply.get("playerId");
-            System.out.println("playerId:"+playerId);
+            int playerId = ((int)jsonreply.get("playerId"))-1;
+            System.out.println("callRegisterPlayers- New playerId:"+playerId);
         } catch (ResourceException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -355,7 +359,7 @@ public class QuizWorld extends World
             Representation result_string = clientPlayers.get();
             JSONObject jsonreply = new JSONObject(result_string.getText());
             int numberOfUsers = (int) jsonreply.get("numberOfUser");
-            System.out.println("numberOfUsers:"+numberOfUsers);
+            System.out.println("callGetNumberOfPlayers- numberOfUsers:"+numberOfUsers);
         } catch (ResourceException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -382,7 +386,7 @@ public class QuizWorld extends World
         Representation result_string = clientScoreKeeper.post(new JsonRepresentation(json), MediaType.APPLICATION_JSON);
         JSONObject jsonreply = new JSONObject(result_string.getText());
         int playerIdFromReply = (int)jsonreply.get("playerId");
-        System.out.println("playerId:"+playerIdFromReply);
+        System.out.println("callSetScore- score is set for playerId:"+playerIdFromReply);
          } catch (ResourceException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -399,7 +403,7 @@ public class QuizWorld extends World
             JSONObject jsonreply = new JSONObject(result_string.getText());
             int playerTwoScore = (int) jsonreply.get("PlayerTwoScore");
             int playerOneScore = (int) jsonreply.get("PlayerOneScore");
-            System.out.println("playerTwoScore:"+playerTwoScore +"  playerOneScore:"+playerOneScore);
+            System.out.println("callGetScore- playerTwoScore:"+playerTwoScore +"  playerOneScore:"+playerOneScore);
         } catch (ResourceException e) {
             e.printStackTrace();
         } catch (IOException e) {
