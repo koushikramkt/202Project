@@ -318,7 +318,7 @@ public class QuizWorld extends World
     }
     
     private void callPOSTAPI(){
-        client = new ClientResource( URL ); 
+        //client = new ClientResource( URL ); 
         /*JSONObject json_insert_quarter = new JSONObject();
         json_insert_quarter.put("action", "insert-quarter");
         client.post(new JsonRepresentation(json_insert_quarter), MediaType.APPLICATION_JSON);
