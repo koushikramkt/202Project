@@ -36,6 +36,10 @@ public class QuizWorld extends World
      private String URLscore = "http://localhost:8080/codeQuizScore" ;
     ClientResource clientPlayers ; 
     ClientResource clientScoreKeeper ;
+    boolean isMultiplayer=false;
+    int playerId;
+     int [] score=new int[2];
+
     
     /**
      * Create all the questions and answers.
@@ -195,6 +199,8 @@ public class QuizWorld extends World
     }
     
     public void setWaitPage(){
+        isMultiplayer=true;
+        
         setBackground(new GreenfootImage("QuizWorldVer2.jpg"));
         clear();
         
@@ -309,7 +315,55 @@ public class QuizWorld extends World
         Text text2 = new Text("That's " + (int)((((double)correct)/total)*100) + "%!");
         addObject(text, 250, 50);
         addObject(text2, 250, 70);
-        Greenfoot.stop();
+       System.out.println("isMultiplayer"+isMultiplayer+ "For PlayerId: "+playerId +"correct :"+correct);
+        isMultiplayer=true;
+        if(isMultiplayer)
+        {
+            // call set score on server
+            callSetScore(playerId , correct);
+            callGetScore();
+            
+            Text results= new Text("Other player is still playing.");
+            Text SecondPlayersScore= new Text("0");
+            //get score on server
+
+            if (correct==score[0]&&correct==score[1])
+            {//  draw
+                results = new Text("Draw! Well played");
+                SecondPlayersScore = new Text(score[1]+"");
+            }
+             
+            if(correct == score[0] && correct<score[1])
+            {// lose
+                results = new Text("Lose! Sorry but you came second!");
+                SecondPlayersScore = new Text(score[1]+"");
+            }
+            
+            if(correct == score[0] && correct>score[1])
+            {//win
+                results = new Text("Winner! That was really great!");
+                SecondPlayersScore = new Text(score[1]+"");
+            }
+            
+            if(correct < score[0] && correct==score[1])
+            {// lose
+                results = new Text("Lose! Sorry but you came second!");
+                SecondPlayersScore = new Text(score[0]+"");
+            }
+            
+            if(correct >score[0] && correct==score[1])
+            {//win 
+                results = new Text("Winner! That was really great!");
+                SecondPlayersScore = new Text(score[0]+"");
+            }
+            
+             
+            addObject(results, 250, 90);
+            addObject(SecondPlayersScore, 250, 120);
+            
+        }
+        
+         Greenfoot.stop();
     }
     
     /**
@@ -336,7 +390,7 @@ public class QuizWorld extends World
             json.put("action", "NewUser");
             Representation result_string = clientPlayers.post(new JsonRepresentation(json), MediaType.APPLICATION_JSON);
             JSONObject jsonreply = new JSONObject(result_string.getText());
-            int playerId = ((int)jsonreply.get("playerId"));
+            playerId = ((int)jsonreply.get("playerId"));
             System.out.println("callRegisterPlayers- New playerId:"+playerId);
         } catch (ResourceException e) {
             e.printStackTrace();
@@ -367,14 +421,16 @@ public class QuizWorld extends World
         //{ "numberOfUser": 2}    start game only when count is 2
         
     }
-    public void callSetScore() //set codeQuizScore
+    public void callSetScore(int playerId,int score) //set codeQuizScore
     {
         //params
         //{"playerId":"0","score":"100"} or 
         //{"playerId":"1","score":"200"}
+        
+        
         try{
-        int playerId=0;
-        int score =100;
+        /*int playerId=0;
+        int score =100;*/
         
         clientScoreKeeper =new ClientResource( URLscore ); 
         JSONObject json = new JSONObject();
@@ -401,6 +457,8 @@ public class QuizWorld extends World
             JSONObject jsonreply = new JSONObject(result_string.getText());
             int playerTwoScore = (int) jsonreply.get("PlayerTwoScore");
             int playerOneScore = (int) jsonreply.get("PlayerOneScore");
+            score[0] = playerOneScore;
+            score[1] = playerTwoScore;
             System.out.println("callGetScore- playerTwoScore:"+playerTwoScore +"  playerOneScore:"+playerOneScore);
         } catch (ResourceException e) {
             e.printStackTrace();
