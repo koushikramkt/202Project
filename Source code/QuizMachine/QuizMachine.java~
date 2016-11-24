@@ -15,7 +15,10 @@ public class QuizMachine {
     int playerOneScore = 0;
     int playerTwoScore = 0;
     int []  scores = new int[2];
+	boolean playerOneEnded = false;
+	boolean playerTwoEnded = false; 
 	private QuizMachine() { }
+
  
 	public static QuizMachine getInstance() {
 		if (theMachine == null) {
@@ -79,4 +82,48 @@ public class QuizMachine {
         return scores;
     }
     //---------------------------------------------
+
+    //-----------For Game ending, score display---
+	
+
+
+	public void setUserGameEndStatus(int playerId)
+	{
+		if(playerId==0)
+		{
+			playerOneEnded= true;
+		}else if(playerId==1)
+		{
+			playerTwoEnded= true;
+		}
+				
+	}
+	public boolean getUserGameEndStatus()
+	{
+		if(playerOneEnded && playerTwoEnded)
+		{
+			
+			return true;
+		}
+		return false;
+	}
+
+
+
+    //---------------------------------------------
+
+
+   //------reset the machine after the game-----------
+
+	public void resetTheQuizMachine()
+	{
+		playerOneEnded = false;
+		playerTwoEnded = false; 
+		countUsers = 0;
+    		playerOneScore = 0;
+    		playerTwoScore = 0;
+		scores[0]=0;
+		scores[1]=0;
+	}
+   //---------------------------------------------	
 }

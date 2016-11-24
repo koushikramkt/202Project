@@ -33,14 +33,17 @@ public class QuizWorld extends World
     private List<Text> xtext;
  
     private String URLplayers = "http://localhost:8080/codeQuiz" ;
-     private String URLscore = "http://localhost:8080/codeQuizScore" ;
+    private String URLscore = "http://localhost:8080/codeQuizScore" ;
+    private String URLplayTracker= "http://localhost:8080/codeQuizPlayTracker";
+    private String URLresetServer= "http://localhost:8080/codeQuizResetServer";
     ClientResource clientPlayers ; 
     ClientResource clientScoreKeeper ;
+    ClientResource clientPlayTracker;
+    ClientResource clientResetServer;
     boolean isMultiplayer=false;
     int playerId;
-     int [] score=new int[2];
+    int [] score=new int[2];
 
-    
     /**
      * Create all the questions and answers.
      * NOTE: This is not the best way to do this at all, in fact it's rather messy.
@@ -82,11 +85,8 @@ public class QuizWorld extends World
         Text rule14=new Text("  wins");
         xtext.add(rule14);
         xrules = new How_to_play(xtext);
-       
-        
-       
-        //super(1207  , 704   , 1);
-        
+          
+        //super(1207  , 704   , 1); 
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         
         prepare();        
@@ -105,6 +105,8 @@ public class QuizWorld extends World
         callSetScore();
         callGetScore();*/
         /*----------Test Ended------*/
+        callGetCleanServer();
+        
         
         
         EasyButton eb = new EasyButton();
@@ -321,8 +323,19 @@ public class QuizWorld extends World
         {
             // call set score on server
             callSetScore(playerId , correct);
-            callGetScore();
-            
+            callSetUserGameEndStatus();
+            while(true){
+                System.out.println("Inside check while");
+                
+                if(callGetUserGameEndStatus())
+                {
+                    callGetScore();
+                    break;
+                }
+                try{
+                Thread.sleep(1000);
+                }catch(Exception e){e.printStackTrace();}
+            }
             Text results= new Text("Other player is still playing.");
             Text SecondPlayersScore= new Text("0");
             //get score on server
@@ -330,31 +343,31 @@ public class QuizWorld extends World
             if (correct==score[0]&&correct==score[1])
             {//  draw
                 results = new Text("Draw! Well played");
-                SecondPlayersScore = new Text(score[1]+"");
+                SecondPlayersScore = new Text("Opponent Scored: "+score[1]+"");
             }
              
             if(correct == score[0] && correct<score[1])
             {// lose
                 results = new Text("Lose! Sorry but you came second!");
-                SecondPlayersScore = new Text(score[1]+"");
+                SecondPlayersScore = new Text("Opponent Scored: "+score[1]+"");
             }
             
             if(correct == score[0] && correct>score[1])
             {//win
                 results = new Text("Winner! That was really great!");
-                SecondPlayersScore = new Text(score[1]+"");
+                SecondPlayersScore = new Text("Opponent Scored: "+score[1]+"");
             }
             
             if(correct < score[0] && correct==score[1])
             {// lose
                 results = new Text("Lose! Sorry but you came second!");
-                SecondPlayersScore = new Text(score[0]+"");
+                SecondPlayersScore = new Text("Opponent Scored: "+score[0]+"");
             }
             
             if(correct >score[0] && correct==score[1])
             {//win 
                 results = new Text("Winner! That was really great!");
-                SecondPlayersScore = new Text(score[0]+"");
+                SecondPlayersScore = new Text("Opponent Scored: "+score[0]+"");
             }
             
              
@@ -470,6 +483,69 @@ public class QuizWorld extends World
          //{"PlayerTwoScore":0,"PlayerOneScore":0}
     }
     
+    public boolean callGetUserGameEndStatus() //get codeQuizScore
+    {
+        
+        System.out.println("Inside callGetUserGameEndStatus");
+        boolean endTheGame = false;
+         try{
+            clientPlayTracker = new ClientResource( URLplayTracker );
+            Representation result_string = clientPlayTracker.get();
+            JSONObject jsonreply = new JSONObject(result_string.getText());
+            endTheGame = (boolean) jsonreply.get("endTheGame");
+            System.out.println("callGetScore- EndTheGame: "+endTheGame);         
+        } catch (ResourceException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return endTheGame;
+        //reply
+         //{"endTheGame":false}
+    }
+    
+    public void callSetUserGameEndStatus() //get codeQuizScore
+    {//{"playerId":"1"}
+         try{
+
+        clientPlayTracker =new ClientResource( URLplayTracker ); 
+        JSONObject json = new JSONObject();
+        json.put("playerId", (playerId-1)+"");
+        
+        Representation result_string = clientPlayTracker.post(new JsonRepresentation(json), MediaType.APPLICATION_JSON);
+        JSONObject jsonreply = new JSONObject(result_string.getText());
+        int playerIdFromReply = (int)jsonreply.get("playerId");
+        System.out.println("GameEndStatus- Game ended for playerId:"+playerIdFromReply);
+         } catch (ResourceException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        //reply
+         //{"playerId":1}
+    }
     
     
+    
+    public void callGetCleanServer() //get codeQuizScore
+    {
+        
+        System.out.println("Inside callGetCleanServer");
+        int success = 0;
+         try{
+            clientResetServer = new ClientResource( URLresetServer );
+            Representation result_string = clientResetServer.get();
+            JSONObject jsonreply = new JSONObject(result_string.getText());
+            success = (int)jsonreply.get("Success");
+            System.out.println("callGetScore- Success: "+success);         
+        } catch (ResourceException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        //reply
+         //{"Success":1}
+    }
 }
