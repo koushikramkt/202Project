@@ -431,7 +431,7 @@ public class QuizWorld extends World
         try{
         /*int playerId=0;
         int score =100;*/
-        
+        System.out.println("Inside callSetScore for playerId: "+playerId+" with score: "+score); 
         clientScoreKeeper =new ClientResource( URLscore ); 
         JSONObject json = new JSONObject();
         json.put("playerId", playerId+"");

@@ -62,7 +62,7 @@ public class QuizMachine {
         if(playerId==1){
             playerTwoScore = score;
         }*/
-	scores[playerId]=s;
+	scores[playerId-1]=s;
     }
     
     public int[] getScore()
