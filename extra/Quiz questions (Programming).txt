@@ -1,0 +1,46 @@
+Find the programmin structure,
+If I study, I will pass the exam.
+If you run fast, You will run the race.
+
+What programming style is it?
+1. Do{
+
+	}While()
+2. If(condition){}
+	else{}
+
+-------------------------------------------------------------------
+	
+You have seven candies, You ate them one at a time till you had no more condies
+What programming style is it?
+1. Do{
+		I am wating candy
+	}While()
+2. If(condition){}
+	else{}
+
+-------------------------------------------------------------------
+	
+You have option to choose only single cake outof five
+What programming style is it?
+1. Do{
+
+	}While(cake)
+	
+2. Switch(Which cake you want)
+	{
+		cake1:
+		
+		cake2:
+		
+		cake3:
+		
+		cake4:
+		
+		cake5:
+	}
+	
+
+	
+	
+	
