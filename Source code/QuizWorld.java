@@ -106,8 +106,7 @@ public class QuizWorld extends World
         callGetScore();*/
         /*----------Test Ended------*/
         callGetCleanServer();
-        
-        
+
         
         EasyButton eb = new EasyButton();
         addObject(eb, 1300,700);
@@ -116,23 +115,23 @@ public class QuizWorld extends World
         MediumButton mb = new MediumButton();
         addObject(mb,919,359);
         mb.setLocation(484,212);
-        
+
         HardButton hb = new HardButton();
         addObject(hb,919,359);
         hb.setLocation(484,312);
-        
+
         /*startgame = new StartGame();
         addObject(startgame, 1300,700);
         startgame.setLocation(812,174);*/
-        
+
         Multiplayer multi = new Multiplayer();
         addObject(multi, 919, 359);
         multi.setLocation(484, 370);
-        
+
         rules = new Rules();
         addObject(rules,919,359);
         rules.setLocation(484,470);
-        
+
         Title title = new Title();
         addObject(title,301,81);
         title.setLocation(262,101);
@@ -145,6 +144,15 @@ public class QuizWorld extends World
         //title.setLocation(169,53);
         //startgame.setLocation(484,112);
 
+        title.setLocation(164,35);
+        eb.setLocation(510,64);
+        mb.setLocation(574,196);
+        rules.setLocation(269,472);
+        multi.setLocation(737,469);
+        hb.setLocation(532,351);
+        mb.setLocation(587,212);
+        eb.setLocation(523,69);
+        title.setLocation(164,75);
     }
     
     public void setStartGame(){ //@Rohan,  you can call your classes 
