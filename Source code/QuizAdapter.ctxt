@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=QuizAdapter
+comment0.text=\n\ Write\ a\ description\ of\ class\ QuizAdapter\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=q
+comment1.target=QuizAdapter(QuizWorld)
+comment2.params=
+comment2.target=void\ end()
+numComments=3

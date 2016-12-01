@@ -21,10 +21,10 @@ public class Multiplayer extends Button
     }    
     
     public void startAction(){
-        
         QuizWorld q = (QuizWorld)getWorld();
-        q.getGameState().execute();
+         q.getGameState().execute();
         q.setOnePlayerState();
+               
         q.getGameState().execute();
     }
 }

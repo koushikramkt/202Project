@@ -25,12 +25,12 @@ public class QuizWorld extends World
     Button startgame;
     Button rules;
     private List<Question> questions;
-    private int questionNum;
-    private int wrong;
-    private int correct;
-    private How_to_play xrules;
-    private int ruleNum;
-    private List<Text> xtext;
+    public int questionNum;
+    public int wrong;
+    public int correct;
+    public How_to_play xrules;
+    public int ruleNum;
+    public List<Text> xtext;
  
     private String URLplayers = "http://35.165.108.247:8080/codeQuiz" ;
     private String URLscore = "http://35.165.108.247:8080/codeQuizScore" ;
@@ -51,6 +51,7 @@ public class QuizWorld extends World
     private State waitingState = new WaitingState(this);
     private State gameEndState = new GameEndState(this);
     
+    private Adapter adapter = new QuizAdapter(this);
     /**
      * Create all the questions and answers.
      * NOTE: This is not the best way to do this at all, in fact it's rather messy.
@@ -191,7 +192,7 @@ public class QuizWorld extends World
         setBackground(new GreenfootImage("QuestionsBackground.png"));
         removeObject(startgame);
         
-        if(gl instanceof multiplePlayerQuestions)
+        if(gl!= null && gl instanceof multiplePlayerQuestions)
         {
             gameState.execute();
         }
@@ -256,7 +257,7 @@ public class QuizWorld extends World
     /**
      * Clears the world of the previous question.
      */
-    private void clear() {
+    public void clear() {
         removeObjects(getObjects(null));
     }
     
@@ -282,7 +283,7 @@ public class QuizWorld extends World
     public void nextQuestion() {
         questionNum++;
         if(questionNum==questions.size()) {
-            end();
+           adapter.end();
         }
         else {
             showQuestion();
@@ -332,7 +333,7 @@ public class QuizWorld extends World
     /**
      * Called at the end of the game - displays the score.
      */
-    private void end() {
+    public void end() {
         clear();
         int total = wrong+correct;
         Text text = new Text("You scored: " + correct + "/" + total + ".");
