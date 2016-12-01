@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=GameEndState
+comment0.text=\n\ Write\ a\ description\ of\ class\ GameEndState\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=q
+comment1.target=GameEndState(QuizWorld)
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ GameEndState\n
+comment2.params=
+comment2.target=void\ execute()
+numComments=3

@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=NoPlayerState
+comment0.text=\n\ Write\ a\ description\ of\ class\ NoPlayerState\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=q
+comment1.target=NoPlayerState(QuizWorld)
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ NoPlayerState\n
+comment2.params=
+comment2.target=void\ execute()
+numComments=3

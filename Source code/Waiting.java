@@ -26,7 +26,10 @@ public class Waiting extends Button
         System.out.println("From Waiting: Number of players (Need 2 player to play the game) :"+numberOfPlayers);
         if(numberOfPlayers==2)
         {
-            getWorldOfType(QuizWorld.class).setStartGame(new multiplePlayerQuestions());
+                    QuizWorld q = (QuizWorld)getWorld();
+                    q.setActiveState();
+                   getWorldOfType(QuizWorld.class).setStartGame(new multiplePlayerQuestions());
+            
         }
     }
 }

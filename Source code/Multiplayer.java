@@ -22,8 +22,9 @@ public class Multiplayer extends Button
     
     public void startAction(){
         
-        getWorldOfType(QuizWorld.class).callRegisterPlayers();
-        
-        getWorldOfType(QuizWorld.class).setWaitPage();
+        QuizWorld q = (QuizWorld)getWorld();
+        q.getGameState().execute();
+        q.setOnePlayerState();
+        q.getGameState().execute();
     }
 }

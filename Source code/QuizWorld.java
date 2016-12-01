@@ -32,10 +32,10 @@ public class QuizWorld extends World
     private int ruleNum;
     private List<Text> xtext;
  
-    private String URLplayers = "http://localhost:8080/codeQuiz" ;
-    private String URLscore = "http://localhost:8080/codeQuizScore" ;
-    private String URLplayTracker= "http://localhost:8080/codeQuizPlayTracker";
-    private String URLresetServer= "http://localhost:8080/codeQuizResetServer";
+    private String URLplayers = "http://35.165.108.247:8080/codeQuiz" ;
+    private String URLscore = "http://35.165.108.247:8080/codeQuizScore" ;
+    private String URLplayTracker= "http://35.165.108.247:8080/codeQuizPlayTracker";
+    private String URLresetServer= "http://35.165.108.247:8080/codeQuizResetServer";
     ClientResource clientPlayers ; 
     ClientResource clientScoreKeeper ;
     ClientResource clientPlayTracker;
@@ -43,7 +43,14 @@ public class QuizWorld extends World
     boolean isMultiplayer=false;
     int playerId;
     int [] score=new int[2];
-
+    
+    private State gameState = null;
+    private State noPlayerState = new NoPlayerState(this);
+    private State onePlayerState = new OnePlayerState(this);
+    private State activeState = new ActiveState(this);
+    private State waitingState = new WaitingState(this);
+    private State gameEndState = new GameEndState(this);
+    
     /**
      * Create all the questions and answers.
      * NOTE: This is not the best way to do this at all, in fact it's rather messy.
@@ -55,7 +62,7 @@ public class QuizWorld extends World
         super(900, 550, 1);
         changeGameLevel(new Easy());
         //questions = (new Easy()).getQuestion();
-               
+        
         xtext= new ArrayList<Text>();
         Text rule1=new Text("How to Play!!!");
         xtext.add(rule1);
@@ -153,6 +160,9 @@ public class QuizWorld extends World
         mb.setLocation(587,212);
         eb.setLocation(523,69);
         title.setLocation(164,75);
+        
+        setNoPlayerState();
+        
     }
     
     public void setStartGame(){ //@Rohan,  you can call your classes 
@@ -181,7 +191,11 @@ public class QuizWorld extends World
         setBackground(new GreenfootImage("QuestionsBackground.png"));
         removeObject(startgame);
         
-        showQuestion();
+        if(gl instanceof multiplePlayerQuestions)
+        {
+            gameState.execute();
+        }
+        
         
        //System.out.println("Inside StartGame!");     
        
@@ -228,7 +242,7 @@ public class QuizWorld extends World
     /**
      * Wipes the world and shows the question.
      */
-    private void showQuestion() {
+    public void showQuestion() {
         clear();
        
         addObject(questions.get(questionNum), 250, 50);
@@ -332,17 +346,18 @@ public class QuizWorld extends World
             // call set score on server
             callSetScore(playerId , correct);
             callSetUserGameEndStatus();
+            setWaitingState();
             while(true){
                 System.out.println("Inside check while");
                 
                 if(callGetUserGameEndStatus())
                 {
-                    callGetScore();
+                    setGameEndState();
+                    gameState.execute();
                     break;
                 }
-                try{
-                Thread.sleep(1000);
-                }catch(Exception e){e.printStackTrace();}
+                gameState.execute();
+
             }
             Text results= new Text("Other player is still playing.");
             Text SecondPlayersScore= new Text("0");
@@ -556,4 +571,38 @@ public class QuizWorld extends World
         //reply
          //{"Success":1}
     }
+    
+    public State getGameState() {
+        return gameState;
+    }
+
+    public void setGameState(State gameState) {
+        this.gameState = gameState;
+    }
+    
+
+
+    public void setNoPlayerState() {
+        this.gameState = noPlayerState;
+    }
+    
+
+
+    public void setOnePlayerState() {
+        this.gameState = onePlayerState;
+    }
+    public void setActiveState() {
+        this.gameState = activeState;
+    }
+    
+        public void setWaitingState() {
+        this.gameState = waitingState;
+    }
+    
+        public void setGameEndState() {
+        this.gameState = gameEndState;
+    }
+
+
+    
 }
