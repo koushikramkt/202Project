@@ -45,11 +45,11 @@ public class QuizWorld extends World
     int [] score=new int[2];
     
     private State gameState = null;
-    private State noPlayerState = new NoPlayerState(this);
-    private State onePlayerState = new OnePlayerState(this);
-    private State activeState = new ActiveState(this);
-    private State waitingState = new WaitingState(this);
-    private State gameEndState = new GameEndState(this);
+    private State noPlayerState = StateFactory.getState("NoPlayerState",this);
+    private State onePlayerState = StateFactory.getState("OnePlayerState",this);
+    private State activeState = StateFactory.getState("ActiveState",this);
+    private State waitingState = StateFactory.getState("WaitingState",this);
+    private State gameEndState = StateFactory.getState("GameEndState", this);
     
     private Adapter adapter = new QuizAdapter(this);
     /**
