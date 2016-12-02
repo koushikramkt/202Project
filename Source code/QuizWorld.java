@@ -287,7 +287,7 @@ public class QuizWorld extends World
         }
         else {
             showQuestion();
-                                    int total = 13;
+                                    int total = 5;
             Text text = new Text("You scored: " + correct + "/" + total + ".");
                                 Text text2 = new Text("That's " + (int)((((double)this.correct)/total)*100) + "%!");
                         addObject(text, 250, 500);
@@ -305,7 +305,7 @@ public class QuizWorld extends World
             clear();
             
             if(correct) {
-                        int total = 13;
+                        int total = 5;
                         addObject(new Text("Correct!"), 250, 30);
                         Text text = new Text("You scored: " + this.correct + "/" + total + ".");
                                 Text text2 = new Text("That's " + (int)((((double)this.correct)/total)*100) + "%!");
@@ -314,7 +314,7 @@ public class QuizWorld extends World
                         
             }
             else {
-                                        int total = 13;
+                                        int total = 5;
                 addObject(new Text("Wrong!"), 250, 30);
                 Text text = new Text("You scored: " + this.correct + "/" + total + ".");
                                                 Text text2 = new Text("That's " + (int)((((double)this.correct)/total)*100) + "%!");
