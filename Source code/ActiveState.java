@@ -22,5 +22,6 @@ public class ActiveState  extends State
     {
 
          quizWorld.showQuestion();
+         quizWorld.isMultiplayer = true;
     }
 }

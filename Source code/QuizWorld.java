@@ -40,7 +40,7 @@ public class QuizWorld extends World
     ClientResource clientScoreKeeper ;
     ClientResource clientPlayTracker;
     ClientResource clientResetServer;
-    boolean isMultiplayer=false;
+    public boolean isMultiplayer=false;
     int playerId;
     int [] score=new int[2];
     
@@ -345,7 +345,7 @@ public class QuizWorld extends World
         addObject(text, 250, 50);
         addObject(text2, 250, 70);
        System.out.println("isMultiplayer"+isMultiplayer+ "For PlayerId: "+playerId +"correct :"+correct);
-        isMultiplayer=true;
+        //isMultiplayer=true;
         if(isMultiplayer)
         {
             // call set score on server

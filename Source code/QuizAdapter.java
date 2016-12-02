@@ -20,7 +20,7 @@ public class QuizAdapter  extends Adapter
         quizWorld.addObject(text, 250, 50);
         quizWorld.addObject(text2, 250, 70);
        System.out.println("isMultiplayer"+quizWorld.isMultiplayer+ "For PlayerId: "+quizWorld.playerId +"correct :"+quizWorld.correct);
-        quizWorld.isMultiplayer=true;
+        //quizWorld.isMultiplayer=true;
         if(quizWorld.isMultiplayer)
         {
             // call set score on server
