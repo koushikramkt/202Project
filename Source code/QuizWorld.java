@@ -197,6 +197,10 @@ public class QuizWorld extends World
             gameState.execute();
         }
         
+        else
+        {
+        showQuestion();
+        }
         
        //System.out.println("Inside StartGame!");     
        

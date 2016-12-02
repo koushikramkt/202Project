@@ -8,10 +8,18 @@ import java.util.*;
 public class Hard implements GameLevel 
 {
      ArrayList<Question> questions;
-     public Hard()
+     
+        public Hard()
+     {
+        questions = new ArrayList<Question>();
+        loadQuestions();
+     }
+     
+     public void loadQuestions()
      {
          
-        String questionText = "1) What is the complexity of selection sort?";
+       
+               String questionText = "1) What is the complexity of selection sort?";
         ArrayList<Answer> answers = new ArrayList<Answer>();
         answers.add(new Answer("O(n^2) ", true));
         answers.add(new Answer("O(n)", false));
@@ -78,7 +86,7 @@ public class Hard implements GameLevel
       
         question5.setExplanation(explanation5);
         questions.add(question5);
-        
+
         
      }
      public ArrayList<Question> getQuestion()
