@@ -247,7 +247,7 @@ public class QuizWorld extends World
         clear();
        
         addObject(questions.get(questionNum), 250, 50);
-        int total = 13;
+        int total = 5;
             Text text = new Text("You scored: " + correct + "/" + total + ".");
             Text text2 = new Text("That's " + (int)((((double)this.correct)/total)*100) + "%!");
             addObject(text, 250, 500);
