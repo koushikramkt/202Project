@@ -19,8 +19,8 @@ public class QuizAdapter  extends Adapter
         Text text2 = new Text("That's " + (int)((((double)quizWorld.correct)/total)*100) + "%!");
         quizWorld.addObject(text, 250, 50);
         quizWorld.addObject(text2, 250, 70);
-       System.out.println("isMultiplayer"+quizWorld.isMultiplayer+ "For PlayerId: "+quizWorld.playerId +"correct :"+quizWorld.correct);
-        //quizWorld.isMultiplayer=true;
+       System.out.println("isMultiplayer"+quizWorld.isMultiplayer+ "For PlayerId: "+quizWorld.playerId +"correct:"+quizWorld.correct);
+
         if(quizWorld.isMultiplayer)
         {
             // call set score on server
